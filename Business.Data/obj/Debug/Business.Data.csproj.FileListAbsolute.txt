@@ -1,0 +1,13 @@
+D:\A\@Test Projects\Business\Business.Data\obj\Debug\Business.Data.csprojResolveAssemblyReference.cache
+D:\A\@Test Projects\Business\Business.Data\obj\Debug\Business.Data.csproj.CoreCompileInputs.cache
+D:\A\@Test Projects\Business\Business.Data\bin\Business.Data.dll.config
+D:\A\@Test Projects\Business\Business.Data\bin\Business.Data.dll
+D:\A\@Test Projects\Business\Business.Data\bin\Business.Data.pdb
+D:\A\@Test Projects\Business\Business.Data\bin\EntityFramework.dll
+D:\A\@Test Projects\Business\Business.Data\bin\EntityFramework.SqlServer.dll
+D:\A\@Test Projects\Business\Business.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\A\@Test Projects\Business\Business.Data\bin\EntityFramework.xml
+D:\A\@Test Projects\Business\Business.Data\bin\EntityFramework.SqlServer.xml
+D:\A\@Test Projects\Business\Business.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\A\@Test Projects\Business\Business.Data\obj\Debug\Business.Data.dll
+D:\A\@Test Projects\Business\Business.Data\obj\Debug\Business.Data.pdb

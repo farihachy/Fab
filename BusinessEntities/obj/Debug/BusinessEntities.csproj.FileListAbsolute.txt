@@ -1,0 +1,6 @@
+D:\A\@Test Projects\Business\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\A\@Test Projects\Business\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\A\@Test Projects\Business\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\A\@Test Projects\Business\BusinessEntities\obj\Debug\BusinessEntities.csproj.CoreCompileInputs.cache
+D:\A\@Test Projects\Business\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\A\@Test Projects\Business\BusinessEntities\obj\Debug\BusinessEntities.pdb

@@ -1,0 +1,52 @@
+﻿<h4>
+    Product Purchase
+</h4>
+<form autocomplete="off" name="productBuyForm" ng-submit="onSubmit(productBuyForm.$valid,model)" novalidate>
+    <div  class="form-group">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group col-md-2">
+                            <select ng-model="model.CategoryId" ng-change="onSelectProductCategory(model.CategoryId)">
+                                <option ng-repeat="category in listProductCategory" value="{{category.Id}}">
+                                    {{category.Name}}
+                                </option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group col-md-2">
+                            <select ng-model="model.Code" ng-disabled="!model.CategoryId">
+                                <option ng-repeat="product in listProduct" value="{{product.Code}}">
+                                    {{product.Code}}
+                                </option>
+                            </select>
+                        </div>
+                    </td>
+
+                    <td contenteditable="true">
+                        <select ng-model="model.Name" ng-disabled="!model.CategoryId">
+                            <option ng-repeat="product in listProduct" value="{{product.Name}}">
+                                {{product.Name}}
+                            </option>
+                        </select>
+                    </td>
+                    <td contenteditable="true" ng-model="quantity" ng-change="calculateTotalPrice()"></td>
+                    <td contenteditable="true" ng-model="unitPrice" ng-change="calculateTotalPrice()"></td>
+                    <td contenteditable="false" ng-model="totalPrice">{{totalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>

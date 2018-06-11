@@ -1,0 +1,61 @@
+﻿<div class="col-md-12">
+    <div class="pull-right col-md-offset-2">
+        <button class="btn btn-info" ng-click="showAllProducts()" ng-hide="isFormHidden">View All Products</button>
+        <button class="btn btn-info" ng-click="hideProductList()" ng-hide="!isFormHidden">Back</button>
+    </div>
+</div>
+
+<div ng-hide="!isFormHidden">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Acion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in listProduct">
+                <td>{{$index+1}}</td>
+                <td>{{product.CategoryName}}</td>
+                <td>{{product.Name}}</td>
+                <td>{{product.Code}}</td>
+                <td>
+                    <span role="button" style="color:green" class="customButton" ng-click="onUpdateProduct(product)"><i class="fa fa-pencil"></i></span>
+                    &nbsp;/&nbsp;
+                    <span role="button" style="color:red" class="customButton" ng-click="onDeleteProduct(product)"><i class="fa fa-trash"></i></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<form autocomplete="off" name="productForm" ng-hide="isFormHidden" ng-submit="onSubmit(productForm.$valid,model)" novalidate>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Category</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <select ng-model="model.CategoryId" class="form-control" required>
+                <option value="">Select A Category</option>
+                <option ng-repeat="category in listProductCategory" value="{{category.Id}}" ng-selected="model.CategoryId=={{category.Id}}">{{category.Name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Name</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <input type="text" class="form-control" placeholder="Product Name" ng-model="model.Name" required>
+        </div>
+
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Code</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <input type="text" class="form-control" placeholder="Product Code" ng-model="model.Code">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-info col-md-offset-5" ng-disabled="productForm.$inValid" ng-show="!isUpdate">Save</button>
+        <button type="submit" class="btn btn-info col-md-offset-5" ng-disabled="productForm.$inValid" ng-show="isUpdate">Update</button>
+
+    </div>
+</form>

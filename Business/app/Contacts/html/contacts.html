@@ -1,0 +1,74 @@
+﻿<div class="col-md-12">
+    <div class="pull-right col-md-offset-10">
+        <button class="btn btn-info" ng-click="showAllContacts()" ng-hide="isFormHidden">View All Contacts</button>
+        <button class="btn btn-info" ng-click="hideContactList()" ng-hide="!isFormHidden">Back</button>
+    </div>
+</div>
+
+<div ng-hide="!isFormHidden">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Role</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Mobile No</th>
+                <th>Acion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in listContact">
+                <td>{{$index+1}}</td>
+                <td>{{contact.ContactRoleName}}</td>
+                <td>{{contact.FirstName}}</td>
+                <td>{{contact.LastName}}</td>
+                <td>{{contact.Address}}</td>
+                <td>{{contact.MobileNo}}</td>
+                <td><span role="button" style="color:green" class="customButton"  ng-click="onUpdateContact(contact)"><i class="fa fa-pencil"></i></span>
+                    &nbsp;/&nbsp;
+                   <span role="button" style="color:red" class="customButton" ng-click="onDeleteContact(contact)"><i class="fa fa-trash"></i></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<form autocomplete="off" name="contactForm" ng-hide="isFormHidden" ng-submit="onSubmit(contactForm.$valid,model)" novalidate>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Role</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <select ng-model="model.ContactRoleId" class="form-control" required>
+                <option value="">Select A Role</option>
+                <option ng-repeat="role in contactRole" value="{{role.Id}}" ng-selected="model.ContactRoleId=={{role.Id}}">{{role.RoleName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">First Name</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <input type="text" class="form-control" placeholder="First Name" ng-model="model.FirstName" required>
+        </div>
+
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Last Name</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <input type="text" class="form-control" placeholder="Last Name" ng-model="model.LastName">
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Address</label>
+        <div class="col-md-10 col-sm-10 col-xs-12">
+            <textarea type="text" class="form-control" placeholder="Address" ng-model="model.Address"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="control-label col-md-2 col-sm-2 col-xs-12">Mobile No</label>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <input type="tel" class="form-control" placeholder="Mobile No" ng-model="model.MobileNo" maxlength="11"/>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-info col-md-offset-5" ng-disabled="contacForm.$inValid" ng-show="!isUpdate">Save</button>
+        <button type="submit" class="btn btn-info col-md-offset-5" ng-disabled="contacForm.$inValid" ng-show="isUpdate">Update</button>
+    </div>
+</form>
